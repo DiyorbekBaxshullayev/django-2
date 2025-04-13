@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bosh sahifa</title>
+</head>
+<body>
+    <h1>Postlar ro'yxati</h1>
+
+    <!-- Admin tugmasi -->
+    <div style="margin-bottom: 20px;">
+        <a href="/admin/">
+            <button style="padding: 10px 20px; background-color: #333; color: white; border: none; cursor: pointer;">
+                Admin
+            </button>
+        </a>
+    </div>
+
+    <!-- Postlar ro'yxati -->
+    {% for post in posts %}
+        <div style="margin-bottom: 20px;">
+            <h2>{{ post.title }}</h2>
+            <a href="{% url 'post_detail' post.pk %}">To'liq o'qish</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
